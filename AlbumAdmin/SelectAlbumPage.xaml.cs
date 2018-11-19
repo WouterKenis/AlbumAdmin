@@ -21,25 +21,30 @@ namespace AlbumAdmin
     /// </summary>
     public partial class SelectAlbumPage : Page
     {
-        private MainWindow mainWindow;
-        public SelectAlbumPage(MainWindow mainWindow)
+
+        public SelectAlbumPage()
         {
             InitializeComponent();
-            this.mainWindow = mainWindow;
         }
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            IList<Album> albums = AlbumRepository.GetAllAlbums();
-            Album album = null;
-            //should be getalbumbyid method
-            foreach (Album a in albums)
+            try
             {
-                if (a.AllbumId == Convert.ToInt32(albumIdTextBox.Text))
+                int albumId = Convert.ToInt32(albumIdTextBox.Text);
+                Album album = AlbumRepository.GetAllAbumById(albumId);
+                if (album == null) 
                 {
-                    album = a;
-                    DataContext = a;
+                    MessageBox.Show("No album found.");
                 }
+                else
+                {
+                    DataContext = album;
+                    albumArtistTextBox.Text = ArtistRepository.GetArtistNameById(album.ArtistId).ToString();
+                }
+                } catch (Exception)
+            {
+                MessageBox.Show("You did not enter a number");
             }
         }
     }

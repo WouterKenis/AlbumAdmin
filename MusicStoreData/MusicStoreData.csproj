@@ -43,7 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Album.cs" />
+    <Compile Include="AlbumDB.cs" />
     <Compile Include="AlbumRepository.cs" />
+    <Compile Include="Artist.cs" />
+    <Compile Include="ArtistRepository.cs" />
+    <Compile Include="Genre.cs" />
+    <Compile Include="GenreRepository.cs" />
     <Compile Include="MusicStoreDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

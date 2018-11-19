@@ -22,12 +22,10 @@ namespace AlbumAdmin
     public partial class AllAlbums : Page
     {
 
-        private MainWindow mainWindow;
         
-        public AllAlbums(MainWindow mainWindow)
+        public AllAlbums()
         {
             InitializeComponent();
-            this.mainWindow = mainWindow;
             allAlbumDataGrid.ItemsSource = AlbumRepository.GetAllAlbums();
         }
     }

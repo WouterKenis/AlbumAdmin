@@ -8,7 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainWindow">
     <Grid>
-        <Button Name="allAlbumButton" Content="Show All Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Margin="277,73,0,0" Height="39" Click="allAlbumButton_Click"/>
+        
+        <Button Name="allAlbumButton" Content="Show All Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Margin="277,66,0,0" Height="39" Click="allAlbumButton_Click"/>
         <Button Name="selectAlbumButton" Content="Select Album" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Margin="277,189,0,0" Height="36" Click="selectAlbumButton_Click"/>
         <Button Name="updateAlbumButton" Content="Update Album" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Margin="277,288,0,0" Height="38" Click="updateAlbumButton_Click"/>
         <Frame x:Name="MainFrame">

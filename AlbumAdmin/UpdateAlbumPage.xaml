@@ -1,4 +1,4 @@
-﻿<Page x:Class="AlbumAdmin.SelectAlbumPage"
+﻿<Page x:Class="AlbumAdmin.UpdateAlbumPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:AlbumAdmin"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SelectAlbumPage">
+      Title="UpdateAlbumPage">
 
     <Grid>
-        
+
         <Label Content="Enter Album ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0"/>
         <Label Content="Genre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60,0,0"/>
         <Label Content="Artist:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0"/>
@@ -17,11 +17,12 @@
         <Label Content="Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,180,0,0"/>
         <Label Content="Album Art URL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,220,0,0"/>
         <TextBox Name="albumIdTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="152,20,0,0"/>
-        <TextBox Name="albumGenreTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Path=GenreId}" VerticalAlignment="Top" Width="120" Margin="152,60,0,0"/>
-        <TextBox Name="albumArtistTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Path=ArtistId}" VerticalAlignment="Top" Width="310" Margin="152,100,0,0"/>
         <TextBox Name="albumTitleTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Path=Title}" VerticalAlignment="Top" Width="310" Margin="152,140,0,0"/>
         <TextBox Name="albumPriceTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Path=Price}" VerticalAlignment="Top" Width="120" Margin="152,180,0,0"/>
         <TextBox Name="albumArtUrlTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Path=AlbumArtUrl}" VerticalAlignment="Top" Width="310" Margin="152,220,0,0"/>
         <Button Name="searchButton" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="305,23,0,0" Click="searchButton_Click"/>
+        <Button Name="updateButton" Content="Update Album" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="152,269,0,0" Height="25" Click="updateButton_Click"/>
+        <ComboBox Name="genreComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="152,64,0,0"/>
+        <ComboBox Name="artistComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Margin="152,104,0,0"/>
     </Grid>
 </Page>

@@ -21,28 +21,21 @@ namespace AlbumAdmin
     /// </summary>
     public partial class MainWindow : Page
     {
-        private SelectAlbumPage selectAlbumPage;
-        private AllAlbums allAlbums;
         public MainWindow()
         {
             InitializeComponent();
 
-            selectAlbumPage = new SelectAlbumPage(this);
-            allAlbums = new AllAlbums(this);
         }
 
         private void allAlbumButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.NavigationService.Navigate(allAlbums);
+            MainFrame.NavigationService.Navigate(new AllAlbums());
         }
 
-        private void selectAlbumButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.NavigationService.Navigate(selectAlbumPage);
-        }
+        private void selectAlbumButton_Click(object sender, RoutedEventArgs e) => MainFrame.NavigationService.Navigate(new SelectAlbumPage());
         private void updateAlbumButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.NavigationService.Navigate(new UpdateAlbumPage());
         }
     }
 }

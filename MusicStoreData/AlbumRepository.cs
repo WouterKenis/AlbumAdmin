@@ -102,5 +102,50 @@ namespace MusicStoreData
 
             return albums;
         }
+        public static Album GetAllAbumById(int albumId)
+        {
+            Album album = null;
+
+            string selectAlbum = "SELECT GenreId, AlbumId, ArtistId, Title, Price, AlbumArtUrl FROM Album WHERE AlbumId = @AlbumId";
+
+            SqlConnection connection = MusicStoreDB.GetSqlConnection();
+
+            SqlCommand selectCommand = new SqlCommand
+            {
+                CommandText = selectAlbum,
+                Connection = connection
+            };
+
+            selectCommand.Parameters.AddWithValue("@AlbumId", albumId);
+            SqlDataReader reader = null;
+
+            try
+            {
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                     album = new Album
+                    {
+                        AllbumId = (int)reader["AlbumId"],
+                        GenreId = (int)reader["GenreId"],
+                        Title = reader["Title"].ToString(),
+                        ArtistId = (int)reader["ArtistId"],
+                        Price = (decimal)reader["Price"],
+                        AlbumArtUrl = reader["AlbumArtUrl"].ToString()
+                    };
+                    
+                }
+
+            }
+            finally
+            {
+                connection?.Close();
+                reader?.Close();
+            }
+
+            return album;
+        }
     }
 }

@@ -65,6 +65,9 @@
     <Compile Include="SelectAlbumPage.xaml.cs">
       <DependentUpon>SelectAlbumPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAlbumPage.xaml.cs">
+      <DependentUpon>UpdateAlbumPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.xaml.cs">
@@ -105,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SelectAlbumPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateAlbumPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
