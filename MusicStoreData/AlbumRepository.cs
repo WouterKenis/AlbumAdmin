@@ -38,7 +38,7 @@ namespace MusicStoreData
                 {
                     Album album = new Album
                     {
-                        AllbumId = (int)reader["AlbumId"],
+                        AlbumId = (int)reader["AlbumId"],
                         GenreId = (int)reader["Genre"],
                         Title = reader["Title"].ToString(),
                         ArtistId = (int)reader["ArtistId"],
@@ -83,7 +83,7 @@ namespace MusicStoreData
                 {
                     Album album = new Album
                     {
-                        AllbumId = (int)reader["AlbumId"],
+                        AlbumId = (int)reader["AlbumId"],
                         GenreId = (int)reader["GenreId"],
                         Title = reader["Title"].ToString(),
                         ArtistId = (int)reader["ArtistId"],
@@ -128,7 +128,7 @@ namespace MusicStoreData
                 {
                      album = new Album
                     {
-                        AllbumId = (int)reader["AlbumId"],
+                        AlbumId = (int)reader["AlbumId"],
                         GenreId = (int)reader["GenreId"],
                         Title = reader["Title"].ToString(),
                         ArtistId = (int)reader["ArtistId"],

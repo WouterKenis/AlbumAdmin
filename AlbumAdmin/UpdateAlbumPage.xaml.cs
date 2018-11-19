@@ -75,7 +75,46 @@ namespace AlbumAdmin
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
+            IList<Artist> allArtists = ArtistRepository.GetArtists();
+            IList<Genre> allGenres = GenreRepository.GetGenres();
 
+            Album updatedAlbum = new Album();
+
+            updatedAlbum.AlbumArtUrl = albumArtUrlTextBox.Text;
+            updatedAlbum.AlbumId = Int32.Parse(albumIdTextBox.Text);
+            //need ArtistId
+            //need GenreId
+            string bla = albumPriceTextBox.Text.Replace('.', ',');
+            decimal d = decimal.Parse(bla);
+            updatedAlbum.Price = Convert.ToDecimal(d);
+            updatedAlbum.Title = albumTitleTextBox.Text;
+
+            foreach (Artist a in allArtists)
+            {
+                var currentArtist = (Artist)artistComboBox.SelectedItem;
+                if (a.ArtistId == currentArtist.ArtistId)
+                {
+                    updatedAlbum.ArtistId = currentArtist.ArtistId;
+                }
+            }
+            foreach (Genre g in allGenres)
+            {
+                var currentGenre = (Genre)genreComboBox.SelectedItem;
+                if (g.GenreId == currentGenre.GenreId)
+                {
+                    updatedAlbum.GenreId = currentGenre.GenreId;
+                }
+            }
+            bool succeeded = AlbumDB.UpdateAlbum(updatedAlbum);
+
+            if (succeeded)
+            {
+                MessageBox.Show("Done.");
+            }
+            else
+            {
+                MessageBox.Show("Failed.");
+            }
         }
     }
 }
